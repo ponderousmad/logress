@@ -7,55 +7,67 @@
 
 #include <ostream>
 
+/*
+ * Logging functionality which can be controlled by the defining LOGGING
+ * Usage:
+ * include this file, then use:
+ * log() << "Stuff to log";
+ *
+ * To change the stream used by the logger at compile time, at the moment
+ * only way is to edit the static Logger::getLogger() method.
+ */
+
 namespace LoggingOn {
     class Logger {
     public:
+        Logger( const char* file );
+        ~Logger();
+
         template < typename T >
         Logger& operator<<( const T & item )
         {
-            if( gStream )
+            if( mStream )
             {
-                *gStream << item;
+                *mStream << item;
             }
             return *this;
         }
 
+        // The template system wouldn't automatically infer types for some of the stream control objects,
+        // so this is here to explitly support them.
         Logger& operator<<( std::basic_ostream< char, std::char_traits<char> >& (*func)(std::basic_ostream< char, std::char_traits<char> >&) )
         {
-            if( gStream )
+            if( mStream )
             {
-                *gStream << func;
+                *mStream << func;
             }
             return *this;
         }
 
+        // Another method to work around template limitations.
         Logger& operator<<( std::ios_base& (*func)(std::ios_base& _Iosbase) )
         {
-            if( gStream )
+            if( mStream )
             {
-                *gStream << func;
+                *mStream << func;
             }
             return *this;
         }
 
-        void flush() {
-            if( gStream )
-            {
-                *gStream << std::endl;
-            }
-        }
+        void close();
 
         static bool logging();
-        static bool init( const char* logFile );
-        static void uninit();
-
-        static Logger gLogger;
+        static Logger & getLogger();
 
     private:
-        static std::ostream * gStream;
+        std::ostream * mStream;
+        bool mOwnStream;
     };
 
-    inline Logger & log() { return Logger::gLogger; }
+    inline Logger & log()
+    {
+        return Logger::getLogger();
+    }
 }
 
 namespace LoggingOff {
@@ -77,16 +89,16 @@ namespace LoggingOff {
             return *this;
         }
 
-        void flush() {}
+        void close() {}
 
+        static Logger & getLogger();
         static bool logging();
-        static bool init( const char* logFile );
-        static void uninit();
-
-        static Logger gLogger;
     };
 
-    inline Logger & log() { return Logger::gLogger; }
+    inline Logger & log()
+    {
+        return Logger::getLogger();
+    }
 }
 
 #ifdef LOGGING

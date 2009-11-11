@@ -21,7 +21,7 @@ namespace Base {
     void doTearDown( const char* assertString, const char* filename, int lineNumber  )
     {
         log() << filename << "(" << lineNumber << "): Asserting: " << assertString << std::endl;
-        Logger::uninit();
+        log().close();
     }
 
     void reportError( const char* description, const char* filename, int lineNumber )

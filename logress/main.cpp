@@ -11,7 +11,6 @@
 
 int main(int argc, char** argv)
 {
-    Logger::init( NULL );
     const char* tests[] = {
       "MemoryCountedTest",
       "MemoryDerefTest",
@@ -29,6 +28,5 @@ int main(int argc, char** argv)
     };
     UnitTest::Framework::runTests( tests, "" );
 
-    Logger::uninit();
     return 0;
 }

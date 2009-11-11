@@ -10,44 +10,56 @@
 #include <iostream>
 #include <assert.h>
 
-namespace {
-    std::ofstream* gFileStream = 0;
-}
-
-std::ostream * LoggingOn::Logger::gStream = 0;
-LoggingOn::Logger LoggingOn::Logger::gLogger;
-LoggingOff::Logger LoggingOff::Logger::gLogger;
-
 bool LoggingOn::Logger::logging()
 {
-    return gStream != 0;
+    return getLogger().mStream != 0;
 }
 
-bool LoggingOn::Logger::init( const char* logFile )
+LoggingOn::Logger& LoggingOn::Logger::getLogger()
 {
-    assert( !gFileStream );
+    static LoggingOn::Logger sLogger( NULL );
+    return sLogger;
+}
+
+LoggingOn::Logger::Logger( const char* logFile )
+{
     if( logFile && logFile[0] )
     {
-        gFileStream = new std::ofstream( logFile );
-        gStream = gFileStream;
+        mStream = new std::ofstream( logFile );
+        mOwnStream = true;
     }
     else
     {
-        gStream = &std::cout;
+        mStream = &std::cout;
+        mOwnStream = false;
     }
-    return gStream->good();
 }
 
-void LoggingOn::Logger::uninit()
+void LoggingOn::Logger::close()
 {
-    if( gFileStream ) {
-        *gFileStream << "\nEnd of log." << std::endl;
+    if( mStream )
+    {
+        *mStream << "\nEnd of log." << std::endl;
     }
-    delete gFileStream;
-    gFileStream = 0;
-    gStream = 0;
+    if(mOwnStream)
+    {
+        delete mStream;
+    }
+    mStream = 0;
 }
 
-bool LoggingOff::Logger::logging() { return false; }
-bool LoggingOff::Logger::init( const char* ) { return true; }
-void LoggingOff::Logger::uninit() {}
+LoggingOn::Logger::~Logger()
+{
+    close();
+}
+
+bool LoggingOff::Logger::logging()
+{
+    return false;
+}
+
+LoggingOff::Logger & LoggingOff::Logger::getLogger()
+{
+    static LoggingOff::Logger sLogger;
+    return sLogger;
+}
