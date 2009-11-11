@@ -1,0 +1,18 @@
+#ifdef BUILD_TESTS
+
+#include "UnitTest/UnitTestFramework.h"
+
+namespace
+{
+	class NAMEofTESTTest : public UnitTest::Framework
+	{
+	public:
+		void run()
+		{
+		}
+	};
+}
+
+DECLARE_TEST( NAMEofTESTTest );
+
+#endif
