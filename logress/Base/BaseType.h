@@ -7,6 +7,11 @@
 
 #include <typeinfo>
 
+/*
+ * Wrap the runtime type identification information to allow for
+ * type comparison and inclusion in std container classes.
+ */
+
 namespace Base
 {
     class Type;

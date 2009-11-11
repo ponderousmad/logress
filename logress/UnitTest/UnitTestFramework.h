@@ -9,19 +9,21 @@
 
 #include <string>
 
-// This is the basis of the very simple test framework.  It doesn't form any part of the
-// simulator code, it is only here to support development work.
-
-// See TestSkeleton.txt for what's needed to put a test together.
-
-// Basically you need a name, a run method, and an Initializer to register the test
-// to the framework.
-
-// Most tests have several sub-tests called by the run method.
-
-// This framework is generally used for testing specific functionality.
-// See TestParser for a system which can be used to playback the output of a log
-// for tracking down bugs and possibly as a regression test framework.
+/*
+ * This is the basis of the very simple test framework.  It doesn't form any part of the
+ * simulator code, it is only here to support development work.
+ *
+ * See TestSkeleton.txt for what's needed to put a test together.
+ *
+ * Basically you need a name, a run method, and an Initializer to register the test
+ * to the framework.
+ *
+ * Most tests have several sub-tests called by the run method.
+ *
+ * This framework is generally used for testing specific functionality.
+ * See TestParser for a system which can be used to playback the output of a log
+ * for tracking down bugs and possibly as a regression test framework.
+ */
 
 #define RUN( test ) preSub( #test ); test(); postSub( #test )
 

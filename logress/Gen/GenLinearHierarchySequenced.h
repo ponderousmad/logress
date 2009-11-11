@@ -7,6 +7,21 @@
 
 #include "MetaBase/MetaBaseTypeList.h"
 
+/*
+ * Gen::LinearHierarchySequenced is an extension of Gen::LinearHierarchy
+ * that makes explicit the corresponding index in the typelist from which
+ * the hierarchy was instantiated.
+ *
+ * So, the template argument will look something like:
+ * template <class Item, int N, class Base>
+ * ExampleTemplate : public Base
+ * {
+ *   < some code/definitions involving the template parameters Item and N >
+ * };
+ *
+ * Otherwise, everything else is the same.
+ */
+
 namespace Gen {
     template <
         template <class Item, int N, class Base> class ItemTemplate,

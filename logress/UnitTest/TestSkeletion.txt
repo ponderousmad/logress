@@ -4,13 +4,19 @@
 
 namespace
 {
-	class NAMEofTESTTest : public UnitTest::Framework
-	{
-	public:
-		void run()
-		{
-		}
-	};
+    class NAMEofTESTTest : public UnitTest::Framework
+    {
+    public:
+        void run()
+        {
+            RUN( someTest );
+        }
+        
+        void someTest()
+        {
+        	CHECK( <some condition> );
+        }
+    };
 }
 
 DECLARE_TEST( NAMEofTESTTest );

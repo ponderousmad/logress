@@ -12,6 +12,7 @@ namespace Base {
         return difference > 0.0 ? difference < tolerance : -difference < tolerance;
     }
 
+    // Force the value into the range [min, max]
     template< typename T >
     T clamp( T value, T min, T max )
     {

@@ -8,6 +8,11 @@
 #include "MetaBase/MetaBaseBoolType.h"
 #include "MetaBase/MetaBaseNullType.h"
 
+/*
+ * The metafunctions in this file allow you to ask if a type is const,
+ * reference, or MetaBase::NullType.
+ */
+
 namespace MetaBase {
     template <typename T>
     struct IsConst : public FalseType {};

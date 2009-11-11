@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------
- * Copyright (c) Adrian Smith.
+ * Copyright (c) Adrian Smith and Tom Gault
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 #include "Base/Top.h"

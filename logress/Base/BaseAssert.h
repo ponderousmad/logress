@@ -5,6 +5,14 @@
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 
+/*
+ * Define ASSERT and ABORT macros which in addition to terminating the program, also
+ * report some information about the error that occured to aid in debugging.
+ *
+ * There is also an ASSERT_VARIABLE macro which can be used to wrap variable declarations
+ * so that they disappear should the preprocessor be set up to completely exclude asserts.
+ */
+
 namespace Base
 {
     void doTearDown( const char* assertString, const char* filename, int lineNumber );

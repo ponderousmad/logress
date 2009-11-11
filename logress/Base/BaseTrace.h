@@ -5,6 +5,24 @@
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 
+/*
+ * The Trace utility is to allow for fine grained control of execution
+ * of parts of the code at runtime. This is mostly allow logging of
+ * only certain modules to be visible.
+ *
+ * In a header file the following line will allow you to reference a trace object:
+ * DECLARE_TRACE( <trace name> );
+ *
+ * Then in one source file, the following will create the object to track the trace:
+ * ADD_TRACE( <trace name> );
+ *
+ * In code, the following will then allow the block of code to execute only when
+ * the trace is active:
+ * TRACE( log() << "Trace active" )
+ *
+ * Finally, to wrap associated declarations, use TRACE_VARIABLE to exclude
+ * any variables used only by the trace code.
+ */
 #ifdef TRACING
 
 #include <utility>

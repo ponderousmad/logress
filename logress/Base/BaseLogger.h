@@ -13,8 +13,14 @@
  * include this file, then use:
  * log() << "Stuff to log";
  *
+ * In theory it supports anything the ostream objects support, but there
+ * may be some corner cases that are not supported.
+ *
  * To change the stream used by the logger at compile time, at the moment
  * only way is to edit the static Logger::getLogger() method.
+ *
+ * There is also a LOG_VARIABLE macro to wrap logging variable declarations
+ * that should also disappear when logging is off.
  */
 
 namespace LoggingOn {
@@ -69,6 +75,10 @@ namespace LoggingOn {
         return Logger::getLogger();
     }
 }
+
+/*
+ * This version of the logger is a 'do nothing' logger for when LOGGING is not defined.
+ */
 
 namespace LoggingOff {
     class Logger {
