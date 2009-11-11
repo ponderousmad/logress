@@ -1,5 +1,9 @@
 #ifndef REFLECTOR_FUNCTION_H__INCLUDED
 #define REFLECTOR_FUNCTION_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 #include "MetaBase/MetaBaseTypeList.h"
 #include "MetaBase/MetaBaseBoolType.h"

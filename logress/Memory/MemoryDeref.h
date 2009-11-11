@@ -1,5 +1,9 @@
 #ifndef MEMORY_DEREF_H__INCLUDED
 #define MEMORY_DEREF_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 namespace Memory
 {

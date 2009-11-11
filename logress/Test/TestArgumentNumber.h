@@ -1,5 +1,9 @@
 #ifndef TEST_ARGUMENTNUMBER_H__INCLUDED
 #define TEST_ARGUMENTNUMBER_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 namespace Test
 {

@@ -1,5 +1,9 @@
 #ifndef METABASE_ADDREFERENCE_H__INCLUDED
 #define METABASE_ADDREFERENCE_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 #include "MetaBase/MetaBaseBoolType.h"
 #include "MetaBase/MetaBaseTypeTraits.h"
