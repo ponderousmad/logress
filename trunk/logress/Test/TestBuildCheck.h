@@ -1,5 +1,9 @@
 #ifndef TEST_BUILDCHECK_H__INCLUDED
 #define TEST_BUILDCHECK_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 #include "Test/TestIgnoreValue.h"
 #include "Test/TestEnvironment.h"

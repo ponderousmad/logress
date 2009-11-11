@@ -1,5 +1,9 @@
 #ifndef MEMORY_EXCEPTION_H__INCLUDED
 #define MEMORY_EXCEPTION_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 #include "Memory/MemoryFwd.h"
 #include "Base/BaseException.h"

@@ -1,5 +1,9 @@
 #ifndef BASE_TOLERANCE_H__INCLUDED
 #define BASE_TOLERANCE_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 namespace Base {
     inline bool equal( double a, double b, double tolerance )

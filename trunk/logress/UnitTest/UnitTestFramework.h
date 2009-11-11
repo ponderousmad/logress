@@ -1,5 +1,9 @@
 #ifndef TEST_FRAMEWORK_H__INCLUDED
 #define TEST_FRAMEWORK_H__INCLUDED
+/* ---------------------------------------------------------------
+ * Copyright (c) Adrian Smith.
+ * Licensed under the MIT license. See license.txt at project root.
+ * --------------------------------------------------------------- */
 
 #ifdef BUILD_TESTS
 
