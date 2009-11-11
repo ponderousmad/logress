@@ -5,6 +5,10 @@
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 
+/*
+ * Define a null type, mostly to implement type lists.
+ */
+
 namespace MetaBase {
     struct NullType {};
 }

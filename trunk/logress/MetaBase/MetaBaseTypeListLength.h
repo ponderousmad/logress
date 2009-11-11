@@ -7,6 +7,13 @@
 
 #include "MetaBase/MetaBaseTypeList.h"
 
+/*
+ * Given a type list, determine its length.
+ *
+ * For example, the following has the value 3:
+ * MetaBase::ListLength< TYPELIST_3( int, int, int) >::Value
+ */
+
 namespace MetaBase {
     template <class List>
     struct ListLength

@@ -7,6 +7,20 @@
 
 #include "MetaBase/MetaBaseNullType.h"
 
+/*
+ * Defines a mechanism for representing a list of types at compile time.
+ * Its implemented as a recursive structure like one would use in
+ * a functional language.
+ *
+ * For convienience, you can use the TYPLIST_N macros below to
+ * easily specify a type list with a given set of types.
+ *
+ * For example, the following defines a typelist whose elements are int and double.
+ * TYPELIST_2( int, double )
+ *
+ * This design comes from "Modern C++ Design"
+ */
+
 namespace MetaBase {
 
     typedef NullType EmptyTypeList;

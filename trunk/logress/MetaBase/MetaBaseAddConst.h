@@ -10,6 +10,18 @@
 #include "MetaBase/MetaBaseAddReference.h"
 #include "MetaBase/MetaBaseRemoveReference.h"
 
+/*
+ * Given a type, produce a new const type, if the type was not already const.
+ * Note that this will only add constness at the outer most level, so
+ * you may have to first deconstruct the type to add the appropriate const.
+ * For example, the following will produce a constant pointer to int, not
+ * a pointer to a const int:
+ *
+ * Metabase::AddConst< int* >::Type
+ *
+ * However, since adding constness to references is not useful, this will
+ * add constness through reference types.
+ */
 namespace MetaBase {
     template <typename T,bool IsConst, bool isRef>
     struct AddConstImpl { typedef const T Type; };

@@ -1,5 +1,5 @@
 /* ---------------------------------------------------------------
- * Copyright (c) Adrian Smith.
+ * Copyright (c) Adrian Smith and Tom Gault
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 #ifndef STRING_UTILS_H__INCLUDED
@@ -60,6 +60,7 @@ namespace String {
     // Writes string data (with length) to a stream
     void writeStr( std::string inStr, std::ostream& outF );
 
+    // Produce a new lower case version of the string.
     std::string toLower( const std::string& inStr );
 }
 

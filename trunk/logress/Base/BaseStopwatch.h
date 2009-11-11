@@ -7,6 +7,10 @@
 
 #include <memory>
 
+/*
+ * Stopwatch provides high accuracy timing information.
+ */
+
 namespace Base
 {
     class Stopwatch;

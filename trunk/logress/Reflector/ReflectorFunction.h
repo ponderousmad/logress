@@ -8,6 +8,24 @@
 #include "MetaBase/MetaBaseTypeList.h"
 #include "MetaBase/MetaBaseBoolType.h"
 
+/*
+ * This template and its specializations are designed to provide compile time
+ * introspection into function types. Note that this only supports functions of
+ * up to 15 arguments.
+ *
+ * For example, with the following:
+ * typedef int Func*(double x, double y);
+ *
+ * Reflector::Function<Func> would have the following members:
+ * ClassType -> MetaBase::NullType
+ * ReturnType -> int
+ * ArgumentTypes -> TYPELIST_2( double, double )
+ * IsConst -> MetaBase::FalseType
+ *
+ * The files ReflectorMethod.h and ReflectorConstMethod add additional
+ * specializations for use with member functions and const member functions.
+ */
+
 namespace Reflector
 {
     template <typename FunctionType>

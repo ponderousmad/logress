@@ -7,6 +7,11 @@
 
 #include "Memory/MemoryFwd.h"
 
+/*
+ * Implements the reference counting contract required by Memory::Shared.
+ * Simply derive publicly from this class.
+ */
+
 class Memory::Counted
 {
 public:

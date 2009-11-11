@@ -7,6 +7,9 @@
 
 namespace Base
 {
+    // Produce an integer at random.
+    // Mostly this is just to allow the random number source to
+    // be changed at a later date without disrupting clients.
     int random();
 }
 

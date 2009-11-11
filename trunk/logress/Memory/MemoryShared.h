@@ -8,6 +8,13 @@
 #include "Memory/MemoryFwd.h"
 #include "Memory/MemoryException.h"
 
+/*
+ * Simple, intrusive, shared memory smart pointer.
+ * Note that this requires that they type either derives from
+ * Memory::Counted, or at least provides the methods ref()
+ * and unref() with the appropriate implementations.
+ */
+
 namespace Memory
 {
     template <typename T>
@@ -138,8 +145,13 @@ private:
     T* mItem;
 };
 
-namespace
+namespace Memory
 {
+    /*
+     * Allow checking to see if the shared object refers to the same
+     * entity. The second template argument is to allow for inheritance.
+     */
+
     template <typename T, typename U>
     bool operator==( const Memory::Shared<T>& shared, const U* ptr )
     {

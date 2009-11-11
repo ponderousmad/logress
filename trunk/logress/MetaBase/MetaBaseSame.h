@@ -7,6 +7,13 @@
 
 #include "MetaBase/MetaBaseBoolType.h"
 
+/*
+ * Given two types, determine if the types match exactly.
+ *
+ * For example, the following has the value false:
+ * MetaBase::Same<int&, int>::Value
+ */
+
 namespace MetaBase {
     template <typename T, typename U>
     struct Same : public FalseType {};

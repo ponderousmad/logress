@@ -7,6 +7,21 @@
 
 #include "MetaBase/MetaBaseTypeList.h"
 
+/*
+ * Gen::ScatterHierarchySequenced is an extension of Gen::ScatterHierarchy
+ * that makes explicit the corresponding index in the typelist from which
+ * the hierarchy was instantiated.
+ *
+ * So, the template argument will look something like:
+ * template <class Item, int N>
+ * ExampleTemplate
+ * {
+ *   < some code/definitions involving the template parameters Item and N >
+ * };
+ *
+ * Otherwise, everything else is the same.
+ */
+
 namespace Gen {
     template <
         template <typename Item, int N> class ItemTemplate,

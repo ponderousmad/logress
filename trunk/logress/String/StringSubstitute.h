@@ -9,6 +9,7 @@
 
 namespace String
 {
+    // Produce a new string with all occurences of the string 'replace' replaced by the string 'with'.
     std::string substitute( const std::string& replace, const std::string& with, const std::string& inString );
 }
 

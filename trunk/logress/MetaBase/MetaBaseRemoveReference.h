@@ -5,6 +5,15 @@
  * Licensed under the MIT license. See license.txt at project root.
  * --------------------------------------------------------------- */
 
+
+/*
+ * Given some type, produce the non-reference version of the type,
+ * or do nothing if the type was not a reference type.
+ *
+ * For example, the following will result in type type const int
+ * Metabase::RemoveConst< const int& >::Type
+ */
+
 namespace MetaBase {
 
     template <typename T>

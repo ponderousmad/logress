@@ -7,6 +7,10 @@
 
 #include <string>
 
+/*
+ * Define a template friendly set of conversions to and from std::string
+ */
+
 namespace String {
     // String <-> Number Conversion Functions
     int strToInt( const std::string& inStr );

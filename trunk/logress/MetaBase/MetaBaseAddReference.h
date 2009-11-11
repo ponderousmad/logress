@@ -8,6 +8,12 @@
 #include "MetaBase/MetaBaseBoolType.h"
 #include "MetaBase/MetaBaseTypeTraits.h"
 
+/*
+ * Given a type, produce the reference version of that type, if not reference already.
+ * For example, the following will evaluate to the type int&:
+ * Metabase::AddReference< int >::Type
+ */
+
 namespace MetaBase {
     template <typename T,bool IsRef>
     struct AddReferenceImpl { typedef T& Type; };

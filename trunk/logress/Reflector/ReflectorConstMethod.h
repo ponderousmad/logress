@@ -7,6 +7,21 @@
 
 #include "MetaBase/MetaBaseTypeList.h"
 
+/*
+ * This set of specializations are designed to provide compile time
+ * introspection into const member function types.
+ *
+ * For example, with the following:
+ * struct Foo {}
+ * typedef int Foo::Func*(double x, double y) const;
+ *
+ * Reflector::Method<Func> would have the following members:
+ * ClassType -> Foo
+ * ReturnType -> int
+ * ArgumentTypes -> TYPELIST_2( double, double )
+ * IsConst -> MetaBase::TrueType
+ */
+
 namespace Reflector {
     template <typename FunctionType>
     struct Function;
