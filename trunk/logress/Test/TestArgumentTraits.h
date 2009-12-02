@@ -7,6 +7,8 @@
 
 #include "MetaBase/MetaBaseRemoveReference.h"
 #include "MetaBase/MetaBaseRemoveConst.h"
+#include "String/StringCasts.h"
+#include "String/StringUtils.h"
 
 #include <string>
 
@@ -27,6 +29,7 @@ namespace Test
 
         static ConstReturnType forConstReturn( const StoreType& value ) { return value; }
         static RefReturnType forRefReturn( StoreType& value ) { return value; }
+        static std::string forLogOutput( int value ) { return String::make( value ); }
     };
 
     template <>
@@ -39,6 +42,7 @@ namespace Test
 
         static ConstReturnType forConstReturn( const StoreType& value ) { return value; }
         static RefReturnType forRefReturn( StoreType& value ) { return value; }
+        static std::string forLogOutput( float value ) { return String::make( value, false, 12 ); }
     };
 
     template <>
@@ -51,6 +55,7 @@ namespace Test
 
         static ConstReturnType forConstReturn( const StoreType& value ) { return value; }
         static RefReturnType forRefReturn( StoreType& value ) { return value; }
+        static std::string forLogOutput( double value ) { return String::make( value, false, 18 ); }
     };
 
     template <>
@@ -63,6 +68,7 @@ namespace Test
 
         static ConstReturnType forConstReturn( const StoreType& value ) { return value.c_str(); }
         static RefReturnType forRefReturn( StoreType& value ) { return value; }
+        static std::string forLogOutput( const char* value ) { return String::quote( value ); }
     };
 
     template <>
@@ -75,6 +81,7 @@ namespace Test
 
         static ConstReturnType forConstReturn( const StoreType& value ) { return value; }
         static RefReturnType forRefReturn( StoreType& value ) { return value; }
+        static std::string forLogOutput( const std::string& value ) { return String::quote( value ); }
     };
 
     template <typename T>

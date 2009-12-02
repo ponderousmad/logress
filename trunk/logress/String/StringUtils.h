@@ -47,6 +47,10 @@ namespace String {
         return unEscape( toUnEscape.c_str() );
     }
 
+    // Quote a string, after escaping the contents.
+    std::string quote( const std::string& toQuote );
+    std::string quote( const char* toQuote );
+
     // Returns true if str1 == str2 in a case-insensitive comparison
     bool compareStringsI( const std::string& str1, const std::string& str2 );
 
