@@ -8,6 +8,7 @@
 #include "Test/TestInvokeContext.h"
 #include "Test/TestEnvironment.h"
 #include "Test/TestBase.h"
+#include "Test/TestLogFormat.h"
 #include "Memory/MemoryShared.h"
 #include "Base/BaseAssert.h"
 
@@ -19,6 +20,7 @@
 #include "assert.h"
 
 using Test::LogRunner;
+using Test::LogFormat;
 using std::string;
 
 LogRunner::LogRunner()
@@ -180,14 +182,6 @@ namespace
         return lineStream.str();
     }
 
-    const char kConstructorSymbol = '#';
-    const char kMethodCallSymbol = '^';
-    const char kFunctionCallSymbol = '!';
-    const char kResultSymbol = '=';
-    const char kObjectIDSymbol = '~';
-    const char kMethodIndexSymbol = '.';
-    const char kOpenArgumentListSymbol = '(';
-    const char kCloseArgumentListSymbol = ')';
     const string::size_type kSigilOffset = 1;
     const string::size_type kObjectIDOffset = 1;
     const string::size_type kMethodIndexOffset = 1;
@@ -195,14 +189,14 @@ namespace
 
     std::auto_ptr<ParsedLine> parseFunction(const string& line, Test::Environment& environment)
     {
-        string::size_type functionNameEnd = line.find( kOpenArgumentListSymbol, kSigilOffset );
+        string::size_type functionNameEnd = line.find( LogFormat::kOpenArgumentListSymbol, kSigilOffset );
         if( functionNameEnd != line.npos )
         {
             string functionName = line.substr( kSigilOffset, functionNameEnd - kSigilOffset );
             Test::ConstFunctionH function = environment.findFunction( functionName );
             if( !function.isNull() )
             {
-                string::size_type argumentListEnd = line.find( kCloseArgumentListSymbol, functionNameEnd + kArgumentListOffset );
+                string::size_type argumentListEnd = line.find( LogFormat::kCloseArgumentListSymbol, functionNameEnd + kArgumentListOffset );
                 if( argumentListEnd != line.npos )
                 {
                     string arguments = line.substr( functionNameEnd + kArgumentListOffset, argumentListEnd - functionNameEnd - kArgumentListOffset );
@@ -215,18 +209,18 @@ namespace
 
     std::auto_ptr<ParsedLine> parseConstruction(const string& line, Test::Environment& environment)
     {
-        string::size_type constructorNameEnd = line.find( kObjectIDSymbol, kSigilOffset );
+        string::size_type constructorNameEnd = line.find( LogFormat::kObjectIDSymbol, kSigilOffset );
         if( constructorNameEnd != line.npos )
         {
             string constructorName = line.substr( kSigilOffset, constructorNameEnd - kSigilOffset );
             Test::ConstObjectFactoryH factory = environment.findFactory( constructorName );
             if( !factory.isNull() )
             {
-                string::size_type idEnd = line.find( kOpenArgumentListSymbol, constructorNameEnd + kObjectIDOffset );
+                string::size_type idEnd = line.find( LogFormat::kOpenArgumentListSymbol, constructorNameEnd + kObjectIDOffset );
                 if( idEnd != line.npos )
                 {
                     string id = line.substr( constructorNameEnd + kObjectIDOffset, idEnd - constructorNameEnd - kObjectIDOffset );
-                    string::size_type argumentListEnd = line.find( kCloseArgumentListSymbol, idEnd + kArgumentListOffset );
+                    string::size_type argumentListEnd = line.find( LogFormat::kCloseArgumentListSymbol, idEnd + kArgumentListOffset );
                     if( argumentListEnd != line.npos )
                     {
                         string arguments = line.substr( idEnd + kArgumentListOffset, argumentListEnd - idEnd - kArgumentListOffset );
@@ -240,19 +234,19 @@ namespace
 
     std::auto_ptr<ParsedLine> parseMethodCall(const string& line, Test::Environment& environment)
     {
-        string::size_type objectNameEnd = line.find( kMethodIndexSymbol, kSigilOffset );
+        string::size_type objectNameEnd = line.find( LogFormat::kMethodIndexSymbol, kSigilOffset );
         if( objectNameEnd != line.npos )
         {
             string name = line.substr( kSigilOffset, objectNameEnd - kSigilOffset );
             Test::ObjectH object = environment.findObject( name );
 
-            string::size_type methodNameEnd = line.find( kOpenArgumentListSymbol, objectNameEnd + kMethodIndexOffset );
+            string::size_type methodNameEnd = line.find( LogFormat::kOpenArgumentListSymbol, objectNameEnd + kMethodIndexOffset );
             if( methodNameEnd != line.npos )
             {
                 string method = line.substr( objectNameEnd + kMethodIndexOffset, methodNameEnd - objectNameEnd - kMethodIndexOffset );
                 if( object->hasMethod( method ) )
                 {
-                    string::size_type argumentListEnd = line.find( kCloseArgumentListSymbol, methodNameEnd + kArgumentListOffset );
+                    string::size_type argumentListEnd = line.find( LogFormat::kCloseArgumentListSymbol, methodNameEnd + kArgumentListOffset );
                     if( argumentListEnd != line.npos )
                     {
                         string arguments = line.substr( methodNameEnd + kArgumentListOffset, argumentListEnd - methodNameEnd - kArgumentListOffset );
@@ -273,15 +267,20 @@ namespace
     {
         if( !line.empty() )
         {
-            switch( line[0] )
+            if( line[0] == LogFormat::kFunctionCallSymbol )
             {
-            case kFunctionCallSymbol:
                 return parseFunction( line, environment );
-            case kConstructorSymbol:
+            }
+            else if( line[0] == LogFormat::kConstructorSymbol )
+            {
                 return parseConstruction( line, environment );
-            case kMethodCallSymbol:
+            }
+            else if( line[0] == LogFormat::kMethodCallSymbol )
+            {
                 return parseMethodCall( line, environment );
-            case kResultSymbol:
+            }
+            else if( line[0] == LogFormat::kResultSymbol )
+            {
                 return parseResult( line );
             }
         }
@@ -306,7 +305,7 @@ bool LogRunner::runTest( std::istream& file, Test::Environment& environment )
     {
         string line( readLine( file ) );
 
-        if( lastLine.get() && lastLine->isInvocation() && line.length() > 0 && line[0] != kResultSymbol )
+        if( lastLine.get() && lastLine->isInvocation() && line.length() > 0 && line[0] != LogFormat::kResultSymbol )
         {
             if( !lastLine->execute( environment, "" ) )
             {

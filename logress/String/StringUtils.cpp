@@ -178,6 +178,17 @@ std::string String::unEscape( const char* toUnEscape )
     return unEscaped;
 }
 
+
+std::string String::quote( const std::string& toQuote )
+{
+    return "\"" + String::escape( toQuote ) + "\"";
+}
+
+std::string String::quote( const char* toQuote )
+{
+    return quote( String::str(toQuote) );
+}
+
 // Returns true if str1 == str2 in a case-insensitive comparison
 bool String::compareStringsI( const std::string& str1, const std::string& str2 )
 {
