@@ -12,7 +12,7 @@ namespace
 {
     const int kBufferSize = 256;
     const int kUnlikelyInt = -152435;
-    const float kUnlikelyFloat = -987.666;
+    const float kUnlikelyFloat = -987.666f;
     const double kUnlikelyDouble = -787.245;
 }
 
@@ -27,7 +27,7 @@ int String::strToInt( const std::string& inStr )
 
 float String::strToFloat( const std::string& inStr )
 {
-    float outVal = kUnlikelyDouble;
+    float outVal = kUnlikelyFloat;
     std::istringstream stream(inStr);
     stream >> outVal;
     return outVal;

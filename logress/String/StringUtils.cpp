@@ -9,6 +9,7 @@
 #include "Base/BaseAssert.h"
 #include "Base/BaseRandom.h"
 
+#include <algorithm>
 #include <cctype>
 
 namespace {
