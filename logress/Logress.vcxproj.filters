@@ -1,318 +1,328 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="Base">
+      <UniqueIdentifier>{c7cc378a-4a72-4f41-a48f-9d9585e279c1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    <Filter Include="MetaBase">
+      <UniqueIdentifier>{785a1b24-2561-4162-af9b-d108b0b08914}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="Reflector">
+      <UniqueIdentifier>{c1fcc624-4482-455c-8b5a-877dd55c575c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Test">
+      <UniqueIdentifier>{6918b2be-b88f-4ea6-b5df-e4bdb2b81391}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Memory">
+      <UniqueIdentifier>{416ff304-c1e1-4386-87f8-25feede19fba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UnitTest">
+      <UniqueIdentifier>{1e7230b2-ed30-4f8f-8908-91c3c1c70a10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="String">
+      <UniqueIdentifier>{ec8342f9-6335-4a40-898a-357811f170aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Gen">
+      <UniqueIdentifier>{f594dca2-5b1f-44d7-94a7-b345161f17f2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Base\BaseAssert.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Base\BaseLogger.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Base\BaseRandom.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Base\BaseStopwatch.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Base\BaseTrace.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="Base\BaseType.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gen\GenLinearHierarchy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gen\GenLinearHierarchySequenced.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gen\GenScatterHierarchy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Gen\GenScatterHierarchySequenced.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory\MemoryCounted.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory\MemoryDeref.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Memory\MemoryShared.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Base</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseAddConst.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseAddReference.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseRemoveConst.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseRemoveReference.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseSame.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseTypeList.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="MetaBase\MetaBaseTypeTraits.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClCompile>
     <ClCompile Include="Reflector\ReflectorFunction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Reflector</Filter>
     </ClCompile>
     <ClCompile Include="Reflector\ReflectorMethod.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Reflector</Filter>
     </ClCompile>
-    <ClCompile Include="String\StringCasts.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Memory\MemoryCounted.cpp">
+      <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="String\StringSubstitute.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Memory\MemoryDeref.cpp">
+      <Filter>Memory</Filter>
     </ClCompile>
-    <ClCompile Include="String\StringUtils.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="Memory\MemoryShared.cpp">
+      <Filter>Memory</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestArgumentList.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestArgumentNumber.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestArgumentsParser.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestBase.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestBuildCheck.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestEnvironment.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestFunction.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestIgnoreValue.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestInvokeContext.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestLogFormat.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestLogRunner.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestLogWriter.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestMethod.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestObject.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="Test\TestObjectFactory.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Test</Filter>
     </ClCompile>
     <ClCompile Include="UnitTest\UnitTestFramework.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>UnitTest</Filter>
     </ClCompile>
+    <ClCompile Include="String\StringCasts.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\StringSubstitute.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="String\StringUtils.cpp">
+      <Filter>String</Filter>
+    </ClCompile>
+    <ClCompile Include="Gen\GenLinearHierarchy.cpp">
+      <Filter>Gen</Filter>
+    </ClCompile>
+    <ClCompile Include="Gen\GenLinearHierarchySequenced.cpp">
+      <Filter>Gen</Filter>
+    </ClCompile>
+    <ClCompile Include="Gen\GenScatterHierarchy.cpp">
+      <Filter>Gen</Filter>
+    </ClCompile>
+    <ClCompile Include="Gen\GenScatterHierarchySequenced.cpp">
+      <Filter>Gen</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base\BaseAssert.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseException.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseLogger.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseRandom.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseStopwatch.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseTolerance.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseTrace.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="Base\BaseType.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Base\Top.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gen\GenLinearHierarchy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gen\GenLinearHierarchySequenced.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gen\GenScatterHierarchy.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gen\GenScatterHierarchySequenced.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Gen\GenTestSwitch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Memory\MemoryCounted.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Memory\MemoryDeref.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Memory\MemoryException.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Memory\MemoryFwd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Memory\MemoryShared.h">
-      <Filter>Header Files</Filter>
+      <Filter>Base</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseAddConst.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseAddReference.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseAssert.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseBoolType.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseNullType.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseRemoveConst.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseRemoveReference.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseSame.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseTestSwitch.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseTypeList.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseTypeListLength.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseTypeListNth.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="MetaBase\MetaBaseTypeTraits.h">
-      <Filter>Header Files</Filter>
+      <Filter>MetaBase</Filter>
     </ClInclude>
     <ClInclude Include="Reflector\ReflectorConstMethod.h">
-      <Filter>Header Files</Filter>
+      <Filter>Reflector</Filter>
     </ClInclude>
     <ClInclude Include="Reflector\ReflectorFunction.h">
-      <Filter>Header Files</Filter>
+      <Filter>Reflector</Filter>
     </ClInclude>
     <ClInclude Include="Reflector\ReflectorMethod.h">
-      <Filter>Header Files</Filter>
+      <Filter>Reflector</Filter>
     </ClInclude>
     <ClInclude Include="Reflector\ReflectorTestSwitch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="String\StringCasts.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="String\StringSubstitute.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="String\StringUtils.h">
-      <Filter>Header Files</Filter>
+      <Filter>Reflector</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestArgumentList.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestArgumentNumber.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestArgumentsParser.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestArgumentTraits.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestBase.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestBuildCheck.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestEnvironment.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestFunction.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestFwd.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestIgnoreValue.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestInvokeContext.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestLogFormat.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestLogRunner.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestLogWriter.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestMethod.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestObject.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
     </ClInclude>
     <ClInclude Include="Test\TestObjectFactory.h">
-      <Filter>Header Files</Filter>
+      <Filter>Test</Filter>
+    </ClInclude>
+    <ClInclude Include="Base\Top.h">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryCounted.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryDeref.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryException.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryFwd.h">
+      <Filter>Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="Memory\MemoryShared.h">
+      <Filter>Memory</Filter>
     </ClInclude>
     <ClInclude Include="UnitTest\UnitTestFramework.h">
-      <Filter>Header Files</Filter>
+      <Filter>UnitTest</Filter>
+    </ClInclude>
+    <ClInclude Include="String\StringCasts.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\StringSubstitute.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="String\StringUtils.h">
+      <Filter>String</Filter>
+    </ClInclude>
+    <ClInclude Include="Gen\GenLinearHierarchy.h">
+      <Filter>Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="Gen\GenLinearHierarchySequenced.h">
+      <Filter>Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="Gen\GenScatterHierarchy.h">
+      <Filter>Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="Gen\GenScatterHierarchySequenced.h">
+      <Filter>Gen</Filter>
+    </ClInclude>
+    <ClInclude Include="Gen\GenTestSwitch.h">
+      <Filter>Gen</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
