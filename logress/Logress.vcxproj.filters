@@ -325,4 +325,9 @@
       <Filter>Gen</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="UnitTest\TestSkeletion.txt">
+      <Filter>UnitTest</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

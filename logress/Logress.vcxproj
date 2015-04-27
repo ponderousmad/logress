@@ -169,6 +169,11 @@
     <ClInclude Include="Test\TestObjectFactory.h" />
     <ClInclude Include="UnitTest\UnitTestFramework.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="UnitTest\TestSkeletion.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
