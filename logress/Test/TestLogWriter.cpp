@@ -125,7 +125,7 @@ const std::string& LogWriter::instanceName( const void* instance ) const
 
 const std::string& LogWriter::addInstance( const void* instance )
 {
-    std::string name = "p" + String::make( (int)instance );
+    std::string name = "p" + String::make( static_cast<int>(reinterpret_cast<intptr_t>(instance)) );
     InstanceNameMap::iterator it = mInstanceMap.find( instance );
     if( it != mInstanceMap.end() )
     {
