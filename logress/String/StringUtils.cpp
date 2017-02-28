@@ -52,7 +52,7 @@ std::string::size_type String::findFirstUnescapedComma( const std::string& searc
             if ( offset != std::string::npos ) {
                 // Count the slashes preceeding the comma
                 int slashCount = 0;
-                std::string::size_type tmpOffset = offset-1;
+                int tmpOffset = static_cast<int>(offset)-1;
                 while ( tmpOffset >= 0 && searchStr[tmpOffset] == '\\' ) {
                     --tmpOffset;
                     ++slashCount;
