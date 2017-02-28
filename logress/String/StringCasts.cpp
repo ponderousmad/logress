@@ -11,7 +11,7 @@
 namespace
 {
     const int kUnlikelyInt = -152435;
-    const float kUnlikelyFloat = -987.666;
+    const float kUnlikelyFloat = -987.666f;
     const double kUnlikelyDouble = -787.245;
 }
 

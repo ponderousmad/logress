@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4C4514F1-E19A-4D24-BD48-039780BD0916}</ProjectGuid>
+    <RootNamespace>Logress</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);BUILD_TESTS;COMPILE_ALL_TESTS;LOGGING;WIN32</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Base\BaseAssert.cpp" />
+    <ClCompile Include="Base\BaseLogger.cpp" />
+    <ClCompile Include="Base\BaseRandom.cpp" />
+    <ClCompile Include="Base\BaseStopwatch.cpp" />
+    <ClCompile Include="Base\BaseTrace.cpp" />
+    <ClCompile Include="Base\BaseType.cpp" />
+    <ClCompile Include="Gen\GenLinearHierarchy.cpp" />
+    <ClCompile Include="Gen\GenLinearHierarchySequenced.cpp" />
+    <ClCompile Include="Gen\GenScatterHierarchy.cpp" />
+    <ClCompile Include="Gen\GenScatterHierarchySequenced.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Memory\MemoryCounted.cpp" />
+    <ClCompile Include="Memory\MemoryDeref.cpp" />
+    <ClCompile Include="Memory\MemoryShared.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseAddConst.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseAddReference.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseRemoveConst.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseRemoveReference.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseSame.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseTypeList.cpp" />
+    <ClCompile Include="MetaBase\MetaBaseTypeTraits.cpp" />
+    <ClCompile Include="Reflector\ReflectorFunction.cpp" />
+    <ClCompile Include="Reflector\ReflectorMethod.cpp" />
+    <ClCompile Include="String\StringCasts.cpp" />
+    <ClCompile Include="String\StringSubstitute.cpp" />
+    <ClCompile Include="String\StringUtils.cpp" />
+    <ClCompile Include="Test\TestArgumentList.cpp" />
+    <ClCompile Include="Test\TestArgumentNumber.cpp" />
+    <ClCompile Include="Test\TestArgumentsParser.cpp" />
+    <ClCompile Include="Test\TestBase.cpp" />
+    <ClCompile Include="Test\TestBuildCheck.cpp" />
+    <ClCompile Include="Test\TestEnvironment.cpp" />
+    <ClCompile Include="Test\TestFunction.cpp" />
+    <ClCompile Include="Test\TestIgnoreValue.cpp" />
+    <ClCompile Include="Test\TestInvokeContext.cpp" />
+    <ClCompile Include="Test\TestLogFormat.cpp" />
+    <ClCompile Include="Test\TestLogRunner.cpp" />
+    <ClCompile Include="Test\TestLogWriter.cpp" />
+    <ClCompile Include="Test\TestMethod.cpp" />
+    <ClCompile Include="Test\TestObject.cpp" />
+    <ClCompile Include="Test\TestObjectFactory.cpp" />
+    <ClCompile Include="UnitTest\UnitTestFramework.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Base\BaseAssert.h" />
+    <ClInclude Include="Base\BaseException.h" />
+    <ClInclude Include="Base\BaseLogger.h" />
+    <ClInclude Include="Base\BaseRandom.h" />
+    <ClInclude Include="Base\BaseStopwatch.h" />
+    <ClInclude Include="Base\BaseTolerance.h" />
+    <ClInclude Include="Base\BaseTrace.h" />
+    <ClInclude Include="Base\BaseType.h" />
+    <ClInclude Include="Base\Top.h" />
+    <ClInclude Include="Gen\GenLinearHierarchy.h" />
+    <ClInclude Include="Gen\GenLinearHierarchySequenced.h" />
+    <ClInclude Include="Gen\GenScatterHierarchy.h" />
+    <ClInclude Include="Gen\GenScatterHierarchySequenced.h" />
+    <ClInclude Include="Gen\GenTestSwitch.h" />
+    <ClInclude Include="Memory\MemoryCounted.h" />
+    <ClInclude Include="Memory\MemoryDeref.h" />
+    <ClInclude Include="Memory\MemoryException.h" />
+    <ClInclude Include="Memory\MemoryFwd.h" />
+    <ClInclude Include="Memory\MemoryShared.h" />
+    <ClInclude Include="MetaBase\MetaBaseAddConst.h" />
+    <ClInclude Include="MetaBase\MetaBaseAddReference.h" />
+    <ClInclude Include="MetaBase\MetaBaseAssert.h" />
+    <ClInclude Include="MetaBase\MetaBaseBoolType.h" />
+    <ClInclude Include="MetaBase\MetaBaseNullType.h" />
+    <ClInclude Include="MetaBase\MetaBaseRemoveConst.h" />
+    <ClInclude Include="MetaBase\MetaBaseRemoveReference.h" />
+    <ClInclude Include="MetaBase\MetaBaseSame.h" />
+    <ClInclude Include="MetaBase\MetaBaseTestSwitch.h" />
+    <ClInclude Include="MetaBase\MetaBaseTypeList.h" />
+    <ClInclude Include="MetaBase\MetaBaseTypeListLength.h" />
+    <ClInclude Include="MetaBase\MetaBaseTypeListNth.h" />
+    <ClInclude Include="MetaBase\MetaBaseTypeTraits.h" />
+    <ClInclude Include="Reflector\ReflectorConstMethod.h" />
+    <ClInclude Include="Reflector\ReflectorFunction.h" />
+    <ClInclude Include="Reflector\ReflectorMethod.h" />
+    <ClInclude Include="Reflector\ReflectorTestSwitch.h" />
+    <ClInclude Include="String\StringCasts.h" />
+    <ClInclude Include="String\StringSubstitute.h" />
+    <ClInclude Include="String\StringUtils.h" />
+    <ClInclude Include="Test\TestArgumentList.h" />
+    <ClInclude Include="Test\TestArgumentNumber.h" />
+    <ClInclude Include="Test\TestArgumentsParser.h" />
+    <ClInclude Include="Test\TestArgumentTraits.h" />
+    <ClInclude Include="Test\TestBase.h" />
+    <ClInclude Include="Test\TestBuildCheck.h" />
+    <ClInclude Include="Test\TestEnvironment.h" />
+    <ClInclude Include="Test\TestFunction.h" />
+    <ClInclude Include="Test\TestFwd.h" />
+    <ClInclude Include="Test\TestIgnoreValue.h" />
+    <ClInclude Include="Test\TestInvokeContext.h" />
+    <ClInclude Include="Test\TestLogFormat.h" />
+    <ClInclude Include="Test\TestLogRunner.h" />
+    <ClInclude Include="Test\TestLogWriter.h" />
+    <ClInclude Include="Test\TestMethod.h" />
+    <ClInclude Include="Test\TestObject.h" />
+    <ClInclude Include="Test\TestObjectFactory.h" />
+    <ClInclude Include="UnitTest\UnitTestFramework.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="UnitTest\TestSkeletion.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </Text>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

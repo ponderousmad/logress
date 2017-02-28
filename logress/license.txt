@@ -1,4 +1,4 @@
-The MIT license applies to all source files in the pipevo project,
+The MIT license applies to all source files in the logress project,
 unless otherwise specified:
 
 Permission is hereby granted, free of charge, to any person
