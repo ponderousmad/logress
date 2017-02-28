@@ -476,7 +476,7 @@ private:
     void logArguments( const std::string& arg1, const std::string& arg2, const std::string& arg3, const std::string& arg4, const std::string& arg5, const std::string& arg6, const std::string& arg7 );
     void logArguments( const std::string& arg1, const std::string& arg2, const std::string& arg3, const std::string& arg4, const std::string& arg5, const std::string& arg6, const std::string& arg7, const std::string& arg8 );
     void logArguments( const std::string& arg1, const std::string& arg2, const std::string& arg3, const std::string& arg4, const std::string& arg5, const std::string& arg6, const std::string& arg7, const std::string& arg8, const std::string& arg9 );
-    void logArguments( const std::string& arg1, const std::string& arg2, const std::string& arg3, const std::string& arg4, const std::string& arg5, const std::string& arg6, const std::string& arg7, const std::string& arg8, const std::string& arg10, const std::string& arg8 );
+    void logArguments( const std::string& arg1, const std::string& arg2, const std::string& arg3, const std::string& arg4, const std::string& arg5, const std::string& arg6, const std::string& arg7, const std::string& arg8, const std::string& arg9, const std::string& arg10 );
 
     const std::string& instanceName( const void* instance ) const;
     const std::string& addInstance( const void* instance );
